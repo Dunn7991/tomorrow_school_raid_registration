@@ -1,14 +1,18 @@
 <!doctype html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Raid — регистрация команды | tomorrow school</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <header class="hero">
     <div class="hero-top">
@@ -23,7 +27,7 @@
       <h1>Raid</h1>
       <p class="hero-sub">
         Групповое задание
-        <span class="date-pill" data-event-date>05.01.2026</span>
+        <span class="date-pill" data-event-date>05.10.2026</span>
       </p>
     </div>
   </header>
@@ -39,21 +43,20 @@
       <form id="raid-form" novalidate>
         <label class="field">
           <span class="field-label">Фамилия и имя тимлида</span>
-          <input id="full-name" name="fullName" type="text" autocomplete="name"
-                 placeholder="Иванов Иван" required>
+          <input id="full-name" name="fullName" type="text" autocomplete="name" placeholder="Иванов Иван" required>
         </label>
 
         <label class="field">
           <span class="field-label">Ник на платформе</span>
-          <input id="platform-nick" name="platformNick" type="text" autocomplete="off"
-                 autocapitalize="off" spellcheck="false" placeholder="iivanov" required>
+          <input id="platform-nick" name="platformNick" type="text" autocomplete="off" autocapitalize="off"
+            spellcheck="false" placeholder="iivanov" required>
           <small class="field-hint">Логин, под которым вы входите на платформу школы.</small>
         </label>
 
         <label class="field">
           <span class="field-label">Ник в Telegram</span>
-          <input id="telegram" name="telegram" type="text" autocomplete="off"
-                 autocapitalize="off" spellcheck="false" placeholder="@username" required>
+          <input id="telegram" name="telegram" type="text" autocomplete="off" autocapitalize="off" spellcheck="false"
+            placeholder="@username" required>
           <small class="field-hint">Сюда напишем, если что-то изменится.</small>
         </label>
 
@@ -80,4 +83,5 @@
 
   <script src="app.js"></script>
 </body>
+
 </html>
