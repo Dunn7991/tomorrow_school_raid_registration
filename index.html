@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raid — регистрация команды | tomorrow school</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-top">
+      <img class="logo-main" src="assets/tomorrow-school.png" alt="tomorrow school" width="225" height="72">
+      <div class="partners">
+        <img src="assets/alem-ai.png" alt="alem.ai foundation" width="129" height="38">
+        <img src="assets/astana-hub.png" alt="astana hub" width="181" height="38">
+      </div>
+    </div>
+
+    <div class="hero-title">
+      <h1>Raid</h1>
+      <p class="hero-sub">
+        Групповое задание
+        <span class="date-pill" data-event-date>05.01.2026</span>
+      </p>
+    </div>
+  </header>
+
+  <main class="card-wrap">
+    <section class="card" aria-labelledby="form-title">
+      <h2 id="form-title">Регистрация команды</h2>
+      <p class="lead">
+        Форму заполняет только тимлид, одна запись на команду.
+        Выберите время, когда команда будет защищать рейд.
+      </p>
+
+      <form id="raid-form" novalidate>
+        <label class="field">
+          <span class="field-label">Фамилия и имя тимлида</span>
+          <input id="full-name" name="fullName" type="text" autocomplete="name"
+                 placeholder="Иванов Иван" required>
+        </label>
+
+        <label class="field">
+          <span class="field-label">Ник на платформе</span>
+          <input id="platform-nick" name="platformNick" type="text" autocomplete="off"
+                 autocapitalize="off" spellcheck="false" placeholder="iivanov" required>
+          <small class="field-hint">Логин, под которым вы входите на платформу школы.</small>
+        </label>
+
+        <label class="field">
+          <span class="field-label">Ник в Telegram</span>
+          <input id="telegram" name="telegram" type="text" autocomplete="off"
+                 autocapitalize="off" spellcheck="false" placeholder="@username" required>
+          <small class="field-hint">Сюда напишем, если что-то изменится.</small>
+        </label>
+
+        <fieldset class="time-section">
+          <legend class="field-label">Время</legend>
+          <div id="time-list" class="time-list"></div>
+        </fieldset>
+
+        <button class="submit-button" type="submit">Записать команду</button>
+      </form>
+
+      <div id="sold-out" class="sold-out" hidden>
+        <h3>Свободного времени нет</h3>
+        <p>
+          Все слоты на <span data-event-date>05.01.2026</span> уже выбрали другие команды.
+          Напишите организаторам, если ваша команда не успела записаться.
+        </p>
+      </div>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+
+  <script src="app.js"></script>
+</body>
+</html>

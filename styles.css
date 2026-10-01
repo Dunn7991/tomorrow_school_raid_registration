@@ -1,0 +1,286 @@
+:root {
+  --brand: #6673ff;
+  --brand-deep: #4553e6;
+  --ink: #161a3d;
+  --muted: #5f6487;
+  --lilac: #eff1ff;
+  --line: #dcdffb;
+  --white: #ffffff;
+  --error: #d42f57;
+  --success: #138a62;
+  --display: "Unbounded", "Manrope", system-ui, sans-serif;
+  --body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--lilac);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+[hidden] { display: none !important; }
+
+/* ---------- Шапка ---------- */
+
+.hero {
+  background: var(--brand);
+  color: var(--white);
+  padding: 40px clamp(20px, 6vw, 72px) 140px;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.logo-main { width: 180px; }
+
+.partners {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.partners img { height: 30px; width: auto; }
+
+.hero-title {
+  max-width: 1080px;
+  margin: 56px auto 0;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(76px, 17vw, 184px);
+  line-height: .86;
+  letter-spacing: -.05em;
+}
+
+.hero-sub {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 22px 0 0;
+  font-size: clamp(18px, 2.4vw, 22px);
+  font-weight: 600;
+}
+
+.date-pill {
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--brand-deep);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: .85em;
+  letter-spacing: .01em;
+}
+
+/* ---------- Карточка формы ---------- */
+
+.card-wrap {
+  flex: 1;
+  padding: 0 16px 64px;
+}
+
+.card {
+  max-width: 640px;
+  margin: -96px auto 0;
+  padding: clamp(24px, 5vw, 40px);
+  background: var(--white);
+  border-radius: 28px;
+  box-shadow: 0 40px 80px -40px rgba(69, 83, 230, .45);
+}
+
+.card h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -.01em;
+}
+
+.lead {
+  margin: 10px 0 28px;
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+form { display: grid; gap: 20px; }
+
+.field { display: block; }
+
+.field-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.field input {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  transition: border-color .15s, box-shadow .15s;
+}
+
+.field input::placeholder { color: #a3a7c4; }
+
+.field input:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px rgba(102, 115, 255, .18);
+}
+
+.field-hint {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ---------- Время ---------- */
+
+.time-section {
+  margin: 4px 0 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.time-section legend { padding: 0; }
+
+.time-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: 10px;
+}
+
+.time-button {
+  height: 48px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color .15s, background-color .15s, color .15s;
+}
+
+.time-button:hover { border-color: var(--brand); }
+
+.time-button.selected {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: var(--white);
+}
+
+.time-list-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 16px;
+  border: 1.5px dashed var(--line);
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ---------- Кнопка ---------- */
+
+.submit-button {
+  margin-top: 8px;
+  height: 58px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--brand);
+  color: var(--white);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color .15s;
+}
+
+.submit-button:hover { background: var(--brand-deep); }
+
+.submit-button:disabled {
+  background: #b3baff;
+  cursor: not-allowed;
+}
+
+.time-button:focus-visible,
+.submit-button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* ---------- Состояния ---------- */
+
+.sold-out {
+  padding: 24px;
+  border-radius: 18px;
+  background: var(--lilac);
+}
+
+.sold-out h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--brand-deep);
+}
+
+.sold-out p { margin: 8px 0 0; }
+
+.message {
+  min-height: 24px;
+  margin: 18px 0 0;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.message:empty { margin: 0; min-height: 0; }
+.message.error { color: var(--error); }
+.message.success { color: var(--success); }
+
+/* ---------- Мобильные ---------- */
+
+@media (max-width: 640px) {
+  .hero { padding-top: 28px; padding-bottom: 120px; }
+  .hero-top { flex-direction: column; gap: 18px; }
+  .logo-main { width: 150px; }
+  .partners img { height: 24px; }
+  .hero-title { margin-top: 36px; }
+  .card { margin-top: -80px; border-radius: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
