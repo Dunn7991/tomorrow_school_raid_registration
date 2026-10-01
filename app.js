@@ -1,5 +1,5 @@
 // ↓↓↓ Настройки
-const API_URL = "PASTE_YOUR_APPS_SCRIPT_URL_HERE"; // URL веб-приложения Apps Script (/exec)
+const API_URL = "https://script.google.com/macros/s/AKfycbzw8GdqxQ8ax0FJO1y1JuQGF2euRaYxzJst4qR0UUIaAsAPzVMgKCEYB_VPx6sRcPAb/exec"; // URL веб-приложения Apps Script (/exec)
 const EVENT_DATE = "05.01.2026";                   // Дата рейда — меняется только здесь
 
 const timeList = document.querySelector("#time-list");
