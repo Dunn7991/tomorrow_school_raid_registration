@@ -1,6 +1,5 @@
 // ↓↓↓ Настройки
 const API_URL = "https://script.google.com/macros/s/AKfycbzw8GdqxQ8ax0FJO1y1JuQGF2euRaYxzJst4qR0UUIaAsAPzVMgKCEYB_VPx6sRcPAb/exec"; // URL веб-приложения Apps Script (/exec)
-const EVENT_DATE = "02.11.2026";                   // Дата рейда — меняется только здесь
 
 const timeList = document.querySelector("#time-list");
 const form = document.querySelector("#raid-form");
@@ -16,10 +15,6 @@ const NICK_RE = /^[A-Za-z0-9._-]{2,32}$/;
 
 let selectedTime = null;
 let isSubmitting = false;
-
-document.querySelectorAll("[data-event-date]").forEach((el) => {
-  el.textContent = EVENT_DATE;
-});
 
 /* ---------- Нормализация полей ---------- */
 
@@ -157,7 +152,7 @@ form.addEventListener("submit", async (event) => {
     const data = await response.json();
 
     if (data.ok) {
-      showMessage(`Команда записана: ${EVENT_DATE} в ${data.time}.`, "success");
+      showMessage(`Команда записана: в ${data.time}.`, "success");
       form.reset();
       await loadTimes();
       return;
